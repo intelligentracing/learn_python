@@ -9,31 +9,31 @@ OPERATOR_FLOOR = 3
 OPERATOR_CEIL = 4
 
 score = 0
-print("*** Test Your int/float Math Skills ***")
-print("*** Let's Begin: Your Score is 0")
-while True:
-    random_operator = random.randint(1,4)
-    random_A = random.randint(-10,10)
-    random_B = random.randint(-10,10)
-    if random_operator == OPERATOR_ROUND:
+print("*** Let's Begin: Your Score is 0 ***")
+while True: # The game will continue until Ctrl-C to quit
+    random_operator = random.randint(1,4)   # Select an operator randomly
+    random_A = random.randint(-10,10)       # Select first value randomly
+    random_B = random.randint(-10,10)       # Select second value randomly
+    if random_operator == OPERATOR_ROUND:   # If selected operator is round()
         result = round(random_A/random_B)
         operator_string = "round"
-    elif random_operator == OPERATOR_INT:
+    elif random_operator == OPERATOR_INT:   # If selected operator is int()
         result = int(random_A/random_B)
         operator_string = "int"
-    elif random_operator == OPERATOR_FLOOR:
+    elif random_operator == OPERATOR_FLOOR: # If selected operator is floor()
         result = math.floor(random_A/random_B)
         operator_string = "floor"
-    else:
+    else:                                   # If selected operator is ceil()
         result = math.ceil(random_A/random_B)
         operator_string = "ceil"
 
+    # Prepare question string
     question_string = "Question: " + str(operator_string) + "(" + str(random_A) + "/" + str(random_B) + ") = ? "
-    user_result = input(question_string)
-    user_result = int(user_result)
+    user_result = input(question_string)    # Wait for user input 
+    user_result = int(user_result)          # Convert string to int
     if  user_result == result:
-        score = score + 1
+        score = score + 1                   # The answer is correct, add one score
+        print("Correct! Your score increases to ", score)
     else:
-        score = score - 1
-
-    print("Your current score: ", score)
+        score = score - 1                   # The answer is wrong, add one score
+        print("Incorrect! Your score decreases to ", score)
