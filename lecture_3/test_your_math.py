@@ -27,7 +27,8 @@ else:                                   # If selected operator is ceil()
 # Prepare question string
 question_string = ( "Question: " + str(operator_string) + "(" + str(random_A) 
                     + "/" + str(random_B) + ") = ? ")
-user_result = input(question_string)    # Wait for user input 
+user_result = \
+    input(question_string)    # Wait for user input 
 user_result = int(user_result)          # Convert string to int
 if  user_result == result:              # The answer is correct, add one score
     print("Correct!")
