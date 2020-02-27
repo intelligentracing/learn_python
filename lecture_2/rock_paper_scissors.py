@@ -1,3 +1,10 @@
+## This is course material for Introduction to Python Scientific Programming
+## Class 2 Example code: rock_paper_scissors.py
+## Author: Allen Y. Yang,  Intelligent Racing Inc.
+##
+## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
+
+
 import random
 
 # Ask user to input 1 or 2 or 3
@@ -12,6 +19,6 @@ else:
     if computer_input == user_input:
         print("Draw!")
     elif computer_input - user_input == 1 or computer_input-user_input == -2:
-        print("You Lost!")
+        print("You Lose!")
     else:
         print("You Win!")
