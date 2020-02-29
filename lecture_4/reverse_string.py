@@ -1,3 +1,10 @@
+## This is course material for Introduction to Python Scientific Programming
+## Class 4 Example code: reverse_string.py
+## Author: Allen Y. Yang,  Intelligent Racing Inc.
+##
+## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
+
+
 input_string = "Python"
 
 # Method 1, using loop
