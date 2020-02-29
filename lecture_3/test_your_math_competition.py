@@ -1,3 +1,10 @@
+## This is course material for Introduction to Python Scientific Programming
+## Class 3 Example code: test_your_math_competition.py
+## Author: Allen Y. Yang,  Intelligent Racing Inc.
+##
+## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
+
+
 # import two Python modules
 import random   # includes functions for generating random numbers
 import math     # includes additional math functions
