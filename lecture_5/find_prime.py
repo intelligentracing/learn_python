@@ -14,7 +14,7 @@ else:
     if int_limit<2:
         print("No prime number within the range")
         exit
-    for n in range(2, int_limit):
+    for n in range(2, int_limit+1):
         for x in range(2, n):
             if n % x == 0:
                 print(n, 'equals', x, '*', n//x)
