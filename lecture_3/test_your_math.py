@@ -32,7 +32,7 @@ else:                                   # If selected operator is ceil()
     operator_string = "ceil"
 
 # Prepare question string
-question_string = ( "Question: " + str(operator_string) + "(" + str(random_A) 
+question_string = ( "Question: " + operator_string + "(" + str(random_A) 
                     + "/" + str(random_B) + ") = ? ")
 user_result = \
     input(question_string)    # Wait for user input 

@@ -37,7 +37,7 @@ while score<10: # The game will continue until Ctrl-C to quit
         operator_string = "ceil"
 
     # Prepare question string
-    question_string = "Question: " + str(operator_string) + "(" + str(random_A) + "/" + str(random_B) + ") = ? "
+    question_string = "Question: " + operator_string + "(" + str(random_A) + "/" + str(random_B) + ") = ? "
     user_result = input(question_string)    # Wait for user input 
     user_result = int(user_result)          # Convert string to int
     if  user_result == result:
