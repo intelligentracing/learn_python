@@ -10,7 +10,7 @@ import time
 List = list('abcdefghijklmnopqrstuvwxyz' * 10)
 repeat_time = 1000000
 
-# Test total time running while 100 times
+# Test total time running while repeat_time 
 begin_time = time.time()
 for i in range(repeat_time):
     reversed_list = []
@@ -21,7 +21,7 @@ for i in range(repeat_time):
 elapsed_time = time.time() - begin_time
 print('WHILE METHOD: Elapsed time: %.2f seconds' % elapsed_time)
 
-# Test total time running slicing 100 times
+# Test total time running slicing repeat_time 
 begin_time = time.time()
 for i in range(repeat_time):
     reversed_list = []
@@ -29,7 +29,7 @@ for i in range(repeat_time):
 elapsed_time = time.time() - begin_time
 print('SLICE METHOD: Elapsed time: %.2f seconds' % elapsed_time)
 
-# Test total time running in-place reverse() 100 times
+# Test total time running in-place reverse() repeat_time 
 begin_time = time.time()
 for i in range(repeat_time):
     reversed_list=List.copy()
@@ -37,7 +37,7 @@ for i in range(repeat_time):
 elapsed_time = time.time() - begin_time
 print('REVERSE METHOD: Elapsed time: %.2f seconds' % elapsed_time)
 
-# Test total time running in-place reverse() without copy 100 times
+# Test total time running in-place reverse() without copy repeat_time 
 begin_time = time.time()
 for i in range(repeat_time):
     List.reverse()
