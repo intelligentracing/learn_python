@@ -1,5 +1,5 @@
 ## This is course material for Introduction to Python Scientific Programming
-## Class 5 Example code: while_not_quit.py
+## Class 5 Example code: for_continue.py
 ## Author: Allen Y. Yang,  Intelligent Racing Inc.
 ##
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
