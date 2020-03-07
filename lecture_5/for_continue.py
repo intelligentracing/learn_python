@@ -15,4 +15,7 @@ for i in animal_list:
     
     adopted_animals.append(i)
 
-print('We will have your ' + str(adopted_animals) + ' ready for pick up!')
+if not adopted_animals:
+    print('Your adoption list is empty. See you next time!')
+else:
+    print('We will have your ' + str(adopted_animals) + ' ready for pick up!')
