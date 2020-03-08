@@ -6,7 +6,9 @@
 
 # Most popular runtime error examples
 
-EXAMPLE_TO_RUN = 1
+import time
+
+EXAMPLE_TO_RUN = 8
 
 if EXAMPLE_TO_RUN == 0:
     # ********  Case 1: Using rserved words  ********
@@ -52,3 +54,9 @@ elif EXAMPLE_TO_RUN == 7:
         result = input("Please input a string:")
     except KeyboardInterrupt:
         print("\n keyboardInterrupt occurred!")
+elif EXAMPLE_TO_RUN == 8:
+    try:
+        f = open('myfile.txt')
+    except OSError as error_message:
+        print("OS Error: {0}. Time stamp: {1}.".format(error_message, \
+            time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())))
