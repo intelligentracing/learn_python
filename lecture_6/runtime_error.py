@@ -6,15 +6,49 @@
 
 # Most popular runtime error examples
 
-EXAMPLE_TO_RUN = 0
-
-animal_list = ['dog', 'cat', 'pony', 'fisn', 'leopard', 'rabbit','mouse']
+EXAMPLE_TO_RUN = 1
 
 if EXAMPLE_TO_RUN == 0:
-    # ********  Exp 1: Using Reserved Words  ********
+    # ********  Case 1: Using rserved words  ********
     int = 123
     float = int(10.57)
 elif EXAMPLE_TO_RUN == 1:
-    # ********  Exp 1: Calling methods that don't exisit  ********
+    # ********  Case 2:  Forget to cast variable ********
+    try:
+        result = 'abcde' + 5
+    except TypeError:
+        print('TypeError occurred!')
 
-
+elif EXAMPLE_TO_RUN == 2:
+    # ********  Case 7:  Access a list element that doesn't exist ********
+    animal_list = ['dog', 'cat', 'pony', 'fisn', 'leopard', 'rabbit','mouse']
+    try:
+        print(animal_list[7])
+    except IndexError:
+        print('IndexError occurred!')
+elif EXAMPLE_TO_RUN == 3:
+    x = 0; y=0
+    try:
+        result = x/y
+    except ZeroDivisionError:
+        print('ZeroDivisionError occurred!')
+elif EXAMPLE_TO_RUN == 4:
+    try:
+        import Math
+    except ModuleError:
+        print('ModuleError occurred!')       
+elif EXAMPLE_TO_RUN == 5:
+    try:
+        result = int('year2020')
+    except ValueError:
+        print('ValueError occurred!')    
+elif EXAMPLE_TO_RUN == 6:
+    try:
+        print(animal_list)
+    except NameError:
+        print('NameError occurred!')
+elif EXAMPLE_TO_RUN == 7:
+    try:
+        result = input("Please input a string:")
+    except KeyboardInterrupt:
+        print("\n keyboardInterrupt occurred!")

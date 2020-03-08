@@ -21,7 +21,7 @@ else                        # Error
   y = 1
   z = 3
 
-# ********  Case 4: Format the import modules  ********
+# ********  Case 4: Forget to import modules  ********
 print(sqrt(9))
 
 # ********  Case 5: Call methods in the wrong type of objects  ********
@@ -29,7 +29,8 @@ String = "Hello World!"
 String.reverse()
 
 # ********  Case 6: Use the wrong operator on variable types
-result_string = 'abcde' + 5
+List = ['abcde']
+List = List + 'abcde'
 
 # ********  Case 7: Misspell a variable
 animals = ['dog', 'cat', 'pony', 'fisn', 'leopard', 'rabbit','mouse']
