@@ -7,14 +7,14 @@
 # Most popular syntax error examples
 
 # ********  Case 1: Wrong text formatting  ********
-while i in range(10)        # Error
+for i in range(10)        # Error
     print(i)
 else                        # Error
       pass
 
 # ********  Case 2: Misuse of brackets  ********
- List = ('abc','def')        
- print(List(1))              # Error
+List = ('abc','def')        
+List(1) =  List(0)             # Error
 
 # ********  Case 3: Wrong indentation  ********
   x = 0
