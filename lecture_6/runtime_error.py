@@ -58,5 +58,5 @@ elif EXAMPLE_TO_RUN == 8:
     try:
         f = open('myfile.txt')
     except OSError as error_message:
-        print("OS Error: {0}. Time stamp: {1}.".format(error_message, \
-            time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())))
+        print("OS Error: No.{0}. Message: {1}".format(\
+            error_message.args[0], error_message.args[1]))
