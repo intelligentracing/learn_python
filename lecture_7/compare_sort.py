@@ -19,7 +19,9 @@ def insert_sort(input_list, order = 0):
     Output: status      - Boolean: True or False
             input_list  - sorted list if status is True
     '''
-    
+    if order !=0 and order!=1:
+        return False
+
     for index in range(len(input_list)):
     
         # Compare and sort elements one by one
@@ -30,10 +32,20 @@ def insert_sort(input_list, order = 0):
             return False
 
         # Insert to previous sorted sub-list
-        while index>0 and input_list[index-1]>current:
+        # Insert condition based on order
+        if order == 0:
+            while_condition = (index>0 and input_list[index-1]>current)
+        else:
+            while_condition = (index>0 and input_list[index-1]<current)
+        while while_condition:
+            # Insert iteratively until insert condition is False
             input_list[index] = input_list[index-1]
             input_list[index-1] = current
             index -=1
+            if order == 0:
+                while_condition = (index>0 and input_list[index-1]>current)
+            else:
+                while_condition = (index>0 and input_list[index-1]<current)
     
     return True
 
@@ -45,7 +57,7 @@ random_input = random.sample(range(0, sample_count),sample_count)
 print('*** Insert Sort ***')
 result = random_input.copy()
 begin_time = time.time()
-insert_sort(result)
+insert_sort(result,1)
 
 # tic-toc 
 elapsed_time = time.time() - begin_time
