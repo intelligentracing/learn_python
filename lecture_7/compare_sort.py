@@ -7,10 +7,7 @@
 import random
 import time
 
-ASCENDIND_ORDER = 0
-DESCENDIND_ORDER = 1
-
-def insert_sort(input_list, order = 0):
+def insert_sort(input_list, reverse = False):
     ''' A custom function to sort number sequences using insert sort
     Parameters:
     Input:  input_list  - Expecting a list of numerical numbers
@@ -19,7 +16,7 @@ def insert_sort(input_list, order = 0):
     Output: status      - Boolean: True or False
             input_list  - sorted list if status is True
     '''
-    if order !=0 and order!=1:
+    if type(reverse)!=bool:
         return False
 
     for index in range(len(input_list)):
@@ -33,7 +30,7 @@ def insert_sort(input_list, order = 0):
 
         # Insert to previous sorted sub-list
         # Insert condition based on order
-        if order == 0:
+        if reverse == 0:
             while_condition = (index>0 and input_list[index-1]>current)
         else:
             while_condition = (index>0 and input_list[index-1]<current)
@@ -42,7 +39,7 @@ def insert_sort(input_list, order = 0):
             input_list[index] = input_list[index-1]
             input_list[index-1] = current
             index -=1
-            if order == 0:
+            if reverse == 0:
                 while_condition = (index>0 and input_list[index-1]>current)
             else:
                 while_condition = (index>0 and input_list[index-1]<current)
@@ -57,7 +54,7 @@ random_input = random.sample(range(0, sample_count),sample_count)
 print('*** Insert Sort ***')
 result = random_input.copy()
 begin_time = time.time()
-insert_sort(result,1)
+insert_sort(result, True)
 
 # tic-toc 
 elapsed_time = time.time() - begin_time
