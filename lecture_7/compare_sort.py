@@ -65,27 +65,27 @@ def merge_sort(input_list):
         merge_sort(right_half)
 
         # Merging left_half and right_half 
-        i=0
-        j=0
-        k=0
-        while i < len(left_half) and j < len(right_half):
-            if left_half[i] <= right_half[j]:
-                input_list[k]=left_half[i]
-                i=i+1
+        left_pointer=0
+        right_pointer=0
+        merged_pointer=0
+        while left_pointer < len(left_half) and right_pointer < len(right_half):
+            if left_half[left_pointer] <= right_half[right_pointer]:
+                input_list[merged_pointer]=left_half[left_pointer]
+                left_pointer=left_pointer+1
             else:
-                input_list[k]=right_half[j]
-                j=j+1
-            k=k+1
+                input_list[merged_pointer]=right_half[right_pointer]
+                right_pointer=right_pointer+1
+            merged_pointer=merged_pointer+1
 
-        while i < len(left_half):
-            input_list[k]=left_half[i]
-            i=i+1
-            k=k+1
+        while left_pointer < len(left_half):
+            input_list[merged_pointer]=left_half[left_pointer]
+            left_pointer=left_pointer+1
+            merged_pointer=merged_pointer+1
 
-        while j < len(right_half):
-            input_list[k]=right_half[j]
-            j=j+1
-            k=k+1
+        while right_pointer < len(right_half):
+            input_list[merged_pointer]=right_half[right_pointer]
+            right_pointer=right_pointer+1
+            merged_pointer=merged_pointer+1
 
 # Generate a sufficiently long list for sorting
 sample_count = 10000
