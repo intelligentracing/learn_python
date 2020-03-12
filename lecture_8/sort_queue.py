@@ -1,5 +1,5 @@
 ## This is course material for Introduction to Python Scientific Programming
-## Class 8 Example code: compare_queue.py
+## Class 8 Example code: sort_queue.py
 ## Author: Allen Y. Yang,  Intelligent Racing Inc.
 ##
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
