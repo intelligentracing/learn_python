@@ -9,7 +9,7 @@ from random import sample
 from time import time
 
 # Generate a sufficiently long list for comparison
-sample_count = 100000
+sample_count = 1000000
 random_input = sample(range(0, sample_count),sample_count)
 
 # Test speed of enqueue and dequeue operations in list type
