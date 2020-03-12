@@ -31,7 +31,7 @@ for i in random_input:
     test_queue.append(i)
 
 for i in range(sample_count):
-    test_queue.pop()
+    test_queue.popleft()
 
 elapsed_time = time() - begin_time
 print('Queue FIFO time: {}'.format(elapsed_time))
