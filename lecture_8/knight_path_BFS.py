@@ -52,7 +52,8 @@ def BFS(board_size, start, goal, legit_moves):
             move_position = [ current_move[0] + i[0],current_move[1] + i[1]]
 
             # This move may be out of bound or have been visited
-            if move_position[0]<0 or move_position[1]<0 or move_position[0]>=board_size[0] or move_position[1]>=board_size[1]:
+            if move_position[0]<0 or move_position[1]<0 or move_position[0]>=board_size[0] \
+                or move_position[1]>=board_size[1]:
                 continue
             elif move_parent[move_position[0]][move_position[1]]!=[None, None]:
                 continue
