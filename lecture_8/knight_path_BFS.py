@@ -46,7 +46,7 @@ def BFS(board_size, start, goal, legit_moves):
         current_move = search_queue.popleft()
 
         # Generate all legit moves
-        for i in knight_moves:
+        for i in legit_moves:
             
             # Generate a potential move
             move_position = [ current_move[0] + i[0],current_move[1] + i[1]]
