@@ -67,17 +67,16 @@ def BFS(board_size, start, goal, legit_moves):
                 is_goal = True
                 break
         
+        path_queue = deque()
         if is_goal:
             # Assign the found path and quit
-            path_queue = deque()
-
             while is_goal:
                 path_queue.append(move_position)
                 move_position = move_parent[move_position[0]][move_position[1]]
                 if move_position[0]==-1:
                     is_goal = False
             
-            return path_queue
+        return path_queue
 
 
 # Assign chess board size. Here half a standard board is used
