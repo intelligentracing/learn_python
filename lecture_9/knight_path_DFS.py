@@ -33,19 +33,19 @@ def DFS(board_size, start, goal, legit_moves):
         raise ValueError('Start position value is not supported')
 
     # Initialization
-    search_queue = deque()    # this is a queue to manage the order of the DFS
-    search_queue.append(start)
+    search_stack = deque()    # this is a queue to manage the order of the DFS
+    search_stack.append(start)
 
     # move_parent records the parent notes of the searched moves on the board
-    move_parent  = [[[None,None] for i in range(board_size[1])] for j in range(board_size[0])]
+    parent_map  = [[[None,None] for i in range(board_size[1])] for j in range(board_size[0])]
     is_goal = False
     current_move = [-1, -1]
-    while len(search_queue)>0:
+    while len(search_stack)>0 and not is_goal:
         
         # Retrieve the current FIFO position
         previous_move = current_move
-        current_move = search_queue.pop()
-        move_parent[current_move[0]][current_move[1]] = previous_move
+        current_move = search_stack.pop()
+        parent_map[current_move[0]][current_move[1]] = previous_move
 
         # Generate all legit moves
         for i in legit_moves:
@@ -57,28 +57,28 @@ def DFS(board_size, start, goal, legit_moves):
             if move_position[0]<0 or move_position[1]<0 or move_position[0]>=board_size[0] \
                 or move_position[1]>=board_size[1]:
                 continue
-            elif move_parent[move_position[0]][move_position[1]]!=[None, None]:
+            elif parent_map[move_position[0]][move_position[1]]!=[None, None]:
                 continue
 
             # This is a valid position
-            search_queue.append(move_position)
+            search_stack.append(move_position)
 
             # Check if the new position is the goal
-            if move_position[0] == goal[0] and move_position[1] == goal[1]:
-                move_parent[move_position[0]][move_position[1]] = current_move
+            if move_position == goal:
+                parent_map[move_position[0]][move_position[1]] = current_move
                 is_goal = True
                 break
         
-        path_queue = deque()
-        if is_goal:
-            # Assign the found path and quit
-            while is_goal:
-                path_queue.append(move_position)
-                move_position = move_parent[move_position[0]][move_position[1]]
-                if move_position[0]==-1:
-                    is_goal = False
+    path_queue = deque()
+    if is_goal:
+        # Assign the found path and quit
+        while is_goal:
+            path_queue.appendleft(move_position)
+            move_position = parent_map[move_position[0]][move_position[1]]
+            if move_position[0]==-1:
+                is_goal = False
             
-        return path_queue
+    return path_queue
 
 
 # Assign chess board size. Here half a standard board is used
