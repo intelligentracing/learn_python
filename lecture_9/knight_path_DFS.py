@@ -7,14 +7,14 @@
 from collections import deque
 
 def DFS(board_size, start, goal, legit_moves):
-    ''' BFS search a viable path from start position to goal position on the board_size
+    ''' DFS search a viable path from start position to goal position on the board_size
     Parameters:
     Input:  board_size  - The dimension of the board
             start       - start position of the piece
             goal        - final destination
             legit_moves - describe how the piece can move on the board
     
-    Output: result_path - return a BFS path that reaches the goal, otherwise []
+    Output: result_path - return a DFS path that reaches the goal, otherwise []
     '''
     # Input sanity check
     if len(board_size)!=2 or type(board_size[0])!=int or type(board_size[1])!=int:
@@ -33,7 +33,7 @@ def DFS(board_size, start, goal, legit_moves):
         raise ValueError('Start position value is not supported')
 
     # Initialization
-    search_queue = deque()    # this is a queue to manage the order of the BFS
+    search_queue = deque()    # this is a queue to manage the order of the DFS
     search_queue.append(start)
 
     # move_parent records the parent notes of the searched moves on the board
@@ -80,6 +80,8 @@ def DFS(board_size, start, goal, legit_moves):
                     is_goal = False
             
             return path_queue
+        else:
+            return []
 
 
 # Assign chess board size. Here half a standard board is used
