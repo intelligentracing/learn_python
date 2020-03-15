@@ -40,7 +40,7 @@ def BFS(board_size, start, goal, legit_moves):
     move_parent  = [[[None,None] for i in range(board_size[1])] for j in range(board_size[0])]
     move_parent[start[0]][start[1]] = [-1, -1]     # First root location is assigned a special value of (-1, -1)
     is_goal = False
-    while len(search_queue)>0:
+    while len(search_queue)>0 and not is_goal:
         
         # Retrieve the current FIFO position
         current_move = search_queue.popleft()
@@ -67,16 +67,16 @@ def BFS(board_size, start, goal, legit_moves):
                 is_goal = True
                 break
         
-        path_queue = deque()
-        if is_goal:
-            # Assign the found path and quit
-            while is_goal:
-                path_queue.append(move_position)
-                move_position = move_parent[move_position[0]][move_position[1]]
-                if move_position[0]==-1:
-                    is_goal = False
+    path_queue = deque()
+    if is_goal:
+        # Assign the found path and quit
+        while is_goal:
+            path_queue.appendleft(move_position)
+            move_position = move_parent[move_position[0]][move_position[1]]
+            if move_position[0]==-1:
+                is_goal = False
             
-        return path_queue
+    return path_queue
 
 
 # Assign chess board size. Here half a standard board is used
@@ -91,7 +91,7 @@ knight_start = [0,0]
 # Create a display of the board game problem
 print('Game has started, here is the board with the initial position at 0')
 board_display = [[' * ' for i in range(board_size[1])] for j in range(board_size[0])]
-board_display[knight_start[0]][knight_start[1]] = ' 0 '
+board_display[knight_start[0]][knight_start[1]] = ' S '
 for i in range(board_size[0]):
     display_string = ''.join(board_display[i])
     print(display_string)
@@ -101,11 +101,19 @@ user_input = input('Please input goal position (x, y): ')
 knight_goal = list(eval(user_input))
 
 print('Moving Knight from {0} to {1}:'.format(knight_start, knight_goal))
-board_display[knight_goal[0]][knight_goal[1]]  = ' 1 '
-for i in range(board_size[0]):
-    display_string = ''.join(board_display[i])
-    print(display_string)
+board_display[knight_goal[0]][knight_goal[1]]  = ' G '
 
 knight_path = BFS(board_size, knight_start, knight_goal, knight_moves)
 
 print(knight_path)
+if len(knight_path)>0:
+    start = knight_path.popleft()
+    knight_path.append(start)
+    for i in range(1,len(knight_path)-1):
+        current_move = knight_path.popleft()
+        board_display[current_move[0]][current_move[1]]  = ' o '
+        knight_path.append(current_move)
+        
+for i in range(board_size[0]):
+    display_string = ''.join(board_display[i])
+    print(display_string)
