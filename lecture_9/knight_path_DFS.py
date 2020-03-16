@@ -38,14 +38,12 @@ def DFS(board_size, start, goal, legit_moves):
 
     # move_parent records the parent notes of the searched moves on the board
     parent_map  = [[[None,None] for i in range(board_size[1])] for j in range(board_size[0])]
+    parent_map[start[0]][start[1]] = [-1, -1]
     is_goal = False
-    current_move = [-1, -1]
     while len(search_stack)>0 and not is_goal:
         
-        # Retrieve the current FIFO position
-        previous_move = current_move
+        # Retrieve the current FILO position
         current_move = search_stack.pop()
-        parent_map[current_move[0]][current_move[1]] = previous_move
 
         # Generate all legit moves
         for i in legit_moves:
@@ -62,10 +60,10 @@ def DFS(board_size, start, goal, legit_moves):
 
             # This is a valid position
             search_stack.append(move_position)
+            parent_map[move_position[0]][move_position[1]] = current_move
 
             # Check if the new position is the goal
             if move_position == goal:
-                parent_map[move_position[0]][move_position[1]] = current_move
                 is_goal = True
                 break
         
