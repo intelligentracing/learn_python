@@ -22,16 +22,16 @@ for i in range(sample_count):
     test_list.pop(-1)
 
 elapsed_time = time() - begin_time
-print('List FIFO time: {}'.format(elapsed_time))
+print('List FILO time: {}'.format(elapsed_time))
 
-# Test speed of enqueue and dequeue operations in dequeue type
-test_queue=deque()
+# Test speed of push and pop operations in dequeue type
+test_stack=deque()
 begin_time = time()
 for i in random_input:
-    test_queue.append(i)
+    test_stack.append(i)
 
 for i in range(sample_count):
-    test_queue.pop()
+    test_stack.pop()
 
 elapsed_time = time() - begin_time
-print('Queue FIFO time: {}'.format(elapsed_time))
+print('Stack FILO time: {}'.format(elapsed_time))
