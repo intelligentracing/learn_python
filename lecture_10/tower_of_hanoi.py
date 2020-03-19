@@ -9,7 +9,7 @@ from collections import deque
 def the_other_rod(begin,end):
     ''' This function returns the other rod number from the set of {1, 2, 3} that is not begin or end
     '''
-    rod_set = {0,1,2}
+    rod_set = [0,1,2]
     rod_set.remove(begin)
     rod_set.remove(end)
     return rod_set.pop()
