@@ -25,17 +25,12 @@ def fibonacci(n):
     else:
         return fibonacci(n-1) + fibonacci(n-2)
 
-fib_memory = [None]*(limit + 1)
-fib_memory[0] = 0
-fib_memory[1] = 1
-
 def DP_fibonacci(n):
     ''' More efficiently solving fibonacci using a global variable to remember sub-problems
     Parameters:
     - Input: n an integer >=0
     - Output: Integer Fibonacci number
     '''
-    global fib_memory
 
     if fib_memory[n]==None:
         # fib_memory does not have memory of the nth result
@@ -46,11 +41,20 @@ def DP_fibonacci(n):
 limit = 40
 
 begin_time = time()
+
+# This is using the basic recursion without storing the sub-problem solutions
 result = fibonacci(limit)
+
 elapsed_time = time() - begin_time
 print('Calculating {0} took {1}s'.format(result, elapsed_time))
 
 begin_time = time()
+
+# Create a memory to store all existing fibonacci solutions
+fib_memory = [None]*(limit + 1)
+fib_memory[0] = 0
+fib_memory[1] = 1
 result = DP_fibonacci(limit)
+
 elapsed_time = time() - begin_time
 print('Calculating {0} took {1}s'.format(result, elapsed_time))
