@@ -14,7 +14,6 @@ mutable_list = [1]
 def local_variable_function():
 
     print('local variable {0} in a function.'.format(local_variable))
-    local_varible = 10
 
     global global_variable
     global_variable = 10
@@ -24,7 +23,6 @@ def local_variable_function():
 
 local_variable_function()
 
-print('local variable {0} outside a function.'.format(local_variable))
 print('global variable {0} outside a function.'.format(global_variable))
 print(mutable_list)
 print(mutable_local_list)
