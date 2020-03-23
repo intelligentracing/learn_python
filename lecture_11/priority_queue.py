@@ -8,10 +8,10 @@ directed_graph=[(12, [0, 1]), (5, [0,3]), (8, [0, 2]), (15, [1,5]), (16, [2, 4])
 
 source_node = 0
 sink_node = 5
-
+DP_path = []
 is_complete = False
 search_stack = [(0, [sink_node])]
-while is_complete == False:
+while is_complete == False and search_stack:
     current_path = search_stack.pop()
     current_node = current_path[1][0]
 
