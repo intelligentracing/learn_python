@@ -9,8 +9,6 @@ directed_graph=[(12, [0, 1]), (5, [0,3]), (8, [0, 2]), (15, [1,5]), (16, [2, 4])
 source_node = 0
 sink_node = 5
 
-DP_path = []
-
 is_complete = False
 search_stack = [(0, [sink_node])]
 while is_complete == False:
@@ -19,6 +17,7 @@ while is_complete == False:
 
     if current_node == source_node:
         # The smallest cost path has arrived at the source
+        DP_path = current_path
         break
 
     for edge in directed_graph:
@@ -29,4 +28,4 @@ while is_complete == False:
     
     search_stack.sort(reverse = True)
 
-print(current_path)
+print(DP_path)
