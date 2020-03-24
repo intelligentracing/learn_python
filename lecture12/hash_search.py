@@ -12,11 +12,11 @@ quotes = ['We can know only that we know nothing. And that is the highest degree
 
 def division_hashing(text):
     global hash_prime_number
-    hash_prime_number = 7
+    hash_prime_number = 101
 
     sum = 0
     for c in text:
-        sum = sum + ord(c)
+        sum = sum + (ord(c)*256) % hash_prime_number  # Change a character to its ASCII value
     
     return sum % hash_prime_number
 
