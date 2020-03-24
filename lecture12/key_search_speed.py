@@ -47,10 +47,10 @@ print('Generating 1M random tickers ... ', end = ' ')
 trial_total = 1000000
 TICKER_LETTER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 search_list = []
-for index in range(trial_total)
+for index in range(trial_total):
     new_random_ticker = ''
-    for letter_index in range(random.random(1,5)):
-        new_random_ticker.append(random.choice(TICKER_LETTER))
+    for letter_index in range(random.randint(1,5)):
+        new_random_ticker = new_random_ticker + (random.choice(TICKER_LETTER))
     
     search_list.append(new_random_ticker)
 print('done')
@@ -60,4 +60,18 @@ begin_time = time.time()
 for index in range(trial_total):
     query_result = search_list[index] in Dictionary10
 elapsed_time = time.time() - begin_time
-print("Search a size-10 dictionary takes: ")
+print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(Dictionary10), elapsed_time))
+
+# Test speed for query Dictionary10
+begin_time = time.time()
+for index in range(trial_total):
+    query_result = search_list[index] in Dictionary1000
+elapsed_time = time.time() - begin_time
+print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(Dictionary1000), elapsed_time))
+
+# Test speed for query Dictionary10
+begin_time = time.time()
+for index in range(trial_total):
+    query_result = search_list[index] in DictionaryTotal
+elapsed_time = time.time() - begin_time
+print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(DictionaryTotal), elapsed_time))
