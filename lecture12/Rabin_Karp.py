@@ -10,7 +10,7 @@ def division_hashing(text):
 
     sum = 0
     for c in text:
-        sum = sum + (ord(c)*256) % hash_prime_number  # Change a character to its ASCII value
+        sum = sum*256 + ord(c)  # Change a character to its ASCII value
     
     return sum % hash_prime_number
 
