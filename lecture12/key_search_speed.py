@@ -21,7 +21,7 @@ try:
     path = os.path.dirname(os.path.abspath(__file__))
 
     # Open the file for read
-    f_handle = open(path+'\\'+file_name,"r")
+    f_handle = open(path+'/'+file_name,"r")
 
     # Create three dictionaries of different lengths
     count = 0
