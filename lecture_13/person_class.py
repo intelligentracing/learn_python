@@ -16,8 +16,32 @@ class Person:
     def print_name(selfish):
         print('First Name: {0}, Last Name: {1}'.format(selfish.first_name, selfish.last_name))
 
+    @classmethod
+    def years_until_retirement(cls, current_age):
+        until_retirement_year = cls.retirement_age - current_age
+        if until_retirement_year<=0:
+            print('This person has retired')
+        else:
+            print('This person has {0} years until retirement'.format(until_retirement_year))
+
+    @staticmethod
+    def copyright():
+        print('This class is for noncommercial use only!')
+
 x1 = Person('John', 'Smith')
 x2 = Person('Jane', 'Doe')
 x1.print_name()
 x2.print_name()
 print(x1.retirement_age)
+Person.years_until_retirement(42)
+Person.copyright()
+
+print(id(x1))
+x1.retirement_age = 70
+print(id(x1))
+
+x2 = x1; print(id(x2))
+
+import copy
+x3 = copy.copy(x1); print(id(x3))
+print(x3.retirement_age)
