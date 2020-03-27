@@ -11,4 +11,5 @@ s2 = Student('Jane', 'Doe')
 
 enroll = s1 + s2
 enroll[0].print_name()
-enroll[1].print_name()
+enroll[0].print_ID()
+

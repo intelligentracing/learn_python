@@ -23,6 +23,3 @@ class Student(Person):
 
     def print_ID(self):
         print('{0} {1}\'s student ID is: {2}'.format(self.first_name, self.last_name, self.student_ID))
-
-    def assign_classes(self, classes):
-        pass
