@@ -5,7 +5,6 @@
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
 
 class Shape:
-    area = 0
     initiated = False
 
     def get_area(self):
@@ -19,9 +18,9 @@ class Square(Shape):
 
     def __init__(self, width):
         self.width = width
-        area = self.get_area()
+        self.get_area()
         self.__class__.initiated = True      
     
     def get_area(self):
-        area = self.width*self.width
-        return area
+        self.area = self.width*self.width
+        return self.area
