@@ -10,13 +10,15 @@ source_filename = 'nasdaqlisted.txt'
 result_filename = 'nasdaqetfs.txt'
 
 try:
+    # Obtain current python file's path
     path = os.path.dirname(os.path.abspath(__file__))
-
+    # Open source file and the result file
     source_handle = open(path+'/'+source_filename,'r')
     result_handle = open(path+'/'+result_filename,'w')
 
     for line in source_handle:
-        if 'ETF' in line:
+        if 'ETF' in line:           # if substring ETF exists in one line, we save it to the result file
+            print(line)
             result_handle.write(line)
 except IOError:
     print('IO Error! Please check valid file names and paths')
