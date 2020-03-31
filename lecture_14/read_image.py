@@ -7,7 +7,6 @@
 # Please do <pip3 install matplotlib> and <pip3 install pillow> first
 from matplotlib import image
 from matplotlib import pyplot
-import numpy
 import os
 
 # Read an image file
