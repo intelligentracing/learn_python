@@ -7,6 +7,7 @@
 # Please do <pip3 install matplotlib> and <pip3 install pillow> first
 from matplotlib import image
 from matplotlib import pyplot
+import numpy as np
 import os
 
 # Read an image file
@@ -19,11 +20,13 @@ print('Image type is: ', type(data))
 print('Image shape is: ', data.shape)
 
 # Add some color boundaries to modify an image array
-plot_data = data.copy()
+plot_data = np.array([512,512])
 for width in range(512):
-    for height in range(10):
-        plot_data[height][width] = [255, 0, 0]
-        plot_data[511-height][width] = [0,0,255]
+    for height in range(512):
+        R = data[height,width][0]
+        G = data[height,width][1]
+        B = data[height,width][2]
+        plot_data[height][width] = int(0.3*R + 0.59*G + 0.11*B)
 
 # use pyplot to plot the image
 pyplot.imshow(plot_data)
