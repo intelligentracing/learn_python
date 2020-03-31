@@ -23,6 +23,7 @@ print('Image shape is: ', data.shape)
 plot_data = np.ndarray([512,512])
 for width in range(512):
     for height in range(512):
+        # Convert (R, G, B) to Grayscale per pixel
         R = data[height,width][0]
         G = data[height,width][1]
         B = data[height,width][2]
