@@ -6,7 +6,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.widgets import Slider, Button, RadioButtons
+from matplotlib.widgets import Slider, RadioButtons
 
 # Create initial plot and values
 fig, ax = plt.subplots()
@@ -35,16 +35,6 @@ def update(val):
 
 sfreq.on_changed(update)
 samp.on_changed(update)
-
-# Create a button
-resetax = plt.axes([0.8, 0.025, 0.1, 0.04])
-button = Button(resetax, 'Reset', color=axcolor, hovercolor='0.975')
-
-# button update actions
-def reset(event):
-    sfreq.reset()
-    samp.reset()
-button.on_clicked(reset)
 
 # Create a radio button
 rax = plt.axes([0.025, 0.5, 0.15, 0.15], facecolor=axcolor)
