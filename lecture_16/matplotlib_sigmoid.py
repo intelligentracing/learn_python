@@ -4,7 +4,6 @@
 ##
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
 
-import math
 import numpy as np
 import matplotlib.pyplot as plt
 
