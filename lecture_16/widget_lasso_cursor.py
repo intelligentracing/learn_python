@@ -16,7 +16,7 @@ def onSelect(x):
 	print(x)
 
 lineprops = {'color': 'red', 'linewidth': 3, 'alpha': 0.5}
-lsso = LassoSelector(ax=ax1, onselect=onSelect, lineprops=lineprops)
+lasso = LassoSelector(ax=ax1, onselect=onSelect, lineprops=lineprops)
 
 ax2 = fig.add_subplot(1,2,2)
 ax2.set_xlim([0, 10])
