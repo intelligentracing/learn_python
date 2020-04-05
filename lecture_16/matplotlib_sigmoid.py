@@ -14,24 +14,24 @@ x = np.arange(-10., 10., 0.2)
 sig = sigmoid(x)
 
 fig = plt.figure()
-subplot1 = fig.add_subplot(1, 2, 1)
+ax1 = fig.add_subplot(1, 2, 1)
 
 # Move left y-axis and bottim x-axis to centre
-subplot1.spines['left'].set_position('center')
-subplot1.spines['bottom'].set_position('center')
+ax1.spines['left'].set_position('center')
+ax1.spines['bottom'].set_position('center')
 # Eliminate upper and right axes
-subplot1.spines['right'].set_color('none')
-subplot1.spines['top'].set_color('none')
+ax1.spines['right'].set_color('none')
+ax1.spines['top'].set_color('none')
 
 plt.plot(x,sig, linewidth = 3)
 
-subplot2 = fig.add_subplot(1,2,2)
+ax2 = fig.add_subplot(1,2,2)
 # Move left y-axis to centre
-subplot2.spines['left'].set_position('center')
-subplot2.spines['bottom'].set_position(('data',0))
+ax2.spines['left'].set_position('center')
+ax2.spines['bottom'].set_position(('data',0))
 # Eliminate upper and right axes
-subplot2.spines['right'].set_color('none')
-subplot2.spines['top'].set_color('none')
+ax2.spines['right'].set_color('none')
+ax2.spines['top'].set_color('none')
 
 plt.plot(x,sig,  linewidth = 3)
 
