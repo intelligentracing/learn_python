@@ -11,15 +11,17 @@ text = 'We can know only that we know nothing. And that is the highest degree of
 
 hist_labels = list('abcdefghijklmnopqrstuvwxyz') # label the 26 histogram bins with their text
 
-hist = np.zeros(0)
+hist = np.zeros(0, dtype = int)
 for c in text:
     if c.isalpha():
-        index = ord(c.lower()) - ord('a')
+        index = int(ord(c.lower()) - ord('a'))
         hist = np.append(hist, index)
+print(hist)
 
-plt.hist(hist, 26, facecolor = 'green', alpha = 0.5)
+max_value = np.max(hist)
+n, bins, patches = plt.hist(hist, max_value+1, facecolor = 'green', alpha = 0.5)
 plt.title("ASCII histogram")
-#plt.xticks(list(range(0,26)), hist_labels)   # This option will print tick lables at the beginning of a bin
-plt.xticks(np.array(np.arange(0,26))+0.5, hist_labels)
-plt.xlim(0,26)
+label_axis = (bins[1:26] + bins[0:25])/2 
+plt.xticks(label_axis, hist_labels)
+plt.xlim(0,max_value+1)
 plt.show()
