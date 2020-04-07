@@ -14,8 +14,7 @@ z1 = 3*x + 2*y -1
 z2 = (1/4)*(-2 - 2*x + 2*y)
 z3 = -x + 0.5*y
 
-fig = plt.figure()
-ax3d = fig.add_subplot(111, projection = '3d')
+ax3d = plt.axes(projection = '3d')
 ax3d.plot_surface(x, y, z1, color = 'red', alpha = 0.5 )
 ax3d.plot_surface(x, y, z2, color = 'green', alpha = 0.5 )
 ax3d.plot_surface(x, y, z3, color = 'blue', alpha = 0.5 )
