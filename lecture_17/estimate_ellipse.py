@@ -15,6 +15,8 @@ fig = plt.figure()
 ax = plt.axes()
 ax.set_xlim([-10, 10])
 ax.set_ylim([-10, 10])
+ax.spines['left'].set_position('data', 0)
+ax.spines['bottom'].set_position('data', 0)
 
 # Initialize the cursor input
 cursor = Cursor(ax, horizOn = True, vertOn = True, color = 'green', linewidth=2.0)
