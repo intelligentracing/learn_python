@@ -50,7 +50,5 @@ def onclick(event):
         x = a*np.cos(theta); y= b*np.sin(theta)
         plt.plot(x,y,'k-', linewidth = 3)
 
-
 fig.canvas.mpl_connect('button_press_event', onclick)
-
 plt.show()
