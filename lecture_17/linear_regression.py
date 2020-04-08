@@ -10,14 +10,14 @@ import matplotlib.pyplot as plt
 # Define the model
 x = np.arange(-5, 5, 0.1)
 y = 2*x -1
-l1, =plt.plot(x, y, 'gray', linewidth = 3)
+l1,=plt.plot(x, y, 'gray', linewidth = 3)
 l1.set_label('Model')
 
 # Generate noisy sample
 ax = plt.axes()
 sample_count = 20
 x_sample = 10*np.random.random(sample_count)-5
-y_sample = 2*x_sample-1 + 3*np.random.rand(sample_count)
+y_sample = 2*x_sample-1 + np.random.normal(0, 1.0, sample_count)
 ax.scatter(x_sample, y_sample, c = x_sample, cmap = 'hsv')
 
 A = np.zeros((sample_count, 2))
