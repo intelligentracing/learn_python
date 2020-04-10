@@ -48,15 +48,17 @@ def grad(aa):
 
 
 aa = np.array([-4, 4])
-ax2.scatter(aa[0], aa[1], penalty(aa[0],aa[1]), marker = 'o')
+ax2.scatter(aa[0], aa[1], penalty(aa[0],aa[1]), 'r*')
 delta = np.inf
 epsilon = 0.001
 learn_rate = 0.1
 # Update vector aa
 while delta > epsilon:
     aa_next = aa - learn_rate * grad(aa)
+    ax2.plot([aa[0],aa_next[0]],[aa[1], aa_next[1]],\
+        [penalty(aa[0],aa[1]), penalty(aa_next[0],aa_next[1]) ], 'ko-')
     delta = np.linalg.norm(aa - aa_next)
     aa = aa_next
-    ax2.scatter(aa[0], aa[1], penalty(aa[0],aa[1]), marker = 'o')
-
+    
+ax2.scatter(aa[0], aa[1], penalty(aa[0],aa[1]), 'r*')
 plt.show()
