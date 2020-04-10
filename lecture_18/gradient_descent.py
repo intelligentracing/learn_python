@@ -51,7 +51,8 @@ aa = np.array([-4, 4])
 ax2.scatter(aa[0], aa[1], penalty(aa[0],aa[1]), 'r*')
 delta = np.inf
 epsilon = 0.001
-learn_rate = 0.1
+learn_rate = 0.2
+step_count = 0
 # Update vector aa
 while delta > epsilon:
     aa_next = aa - learn_rate * grad(aa)
@@ -59,6 +60,9 @@ while delta > epsilon:
         [penalty(aa[0],aa[1]), penalty(aa_next[0],aa_next[1]) ], 'ko-')
     delta = np.linalg.norm(aa - aa_next)
     aa = aa_next
+    step_count +=1
     
 ax2.scatter(aa[0], aa[1], penalty(aa[0],aa[1]), 'r*')
 plt.show()
+
+print('Step Count:', step_count)
