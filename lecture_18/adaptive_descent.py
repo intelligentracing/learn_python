@@ -46,23 +46,35 @@ def grad(aa):
     grad_aa[1] = - np.ones(sample_count).dot(update_vector)
     return grad_aa
 
-
 aa = np.array([-4, 4])
-ax2.scatter(aa[0], aa[1], penalty(aa[0],aa[1]), 'r*')
-delta = np.inf
+value = penalty(aa[0],aa[1])
+ax2.scatter(aa[0], aa[1], value , 'r*')
 epsilon = 0.001
-learn_rate = 0.2
-step_count = 0
+learn_rates = [0.2, 0.1, 0.05]
+max_iteration = 100
+delta = value
+iter = 0
 # Update vector aa
-while delta > epsilon:
-    aa_next = aa - learn_rate * grad(aa)
+while delta > epsilon and iter < max_iteration: 
+    delta = 0
+    aa_next = aa
+    for rate in learn_rates:
+        aa_try = aa - rate * grad(aa)
+        value_next = penalty(aa_try[0],aa_try[1])
+        if value_next<value and value - value_next > delta:
+            delta = value - value_next
+            aa_next = aa_try
+    
+    if (aa_next == aa).all():
+        break
+
     ax2.plot([aa[0],aa_next[0]],[aa[1], aa_next[1]],\
         [penalty(aa[0],aa[1]), penalty(aa_next[0],aa_next[1]) ], 'ko-')
     delta = np.linalg.norm(aa - aa_next)
     aa = aa_next
-    step_count +=1
+    iter +=1
     
 ax2.scatter(aa[0], aa[1], penalty(aa[0],aa[1]), 'r*')
 plt.show()
 
-print('Step Count:', step_count)
+print('Step Count:', iter)
