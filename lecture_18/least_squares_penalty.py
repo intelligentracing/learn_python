@@ -44,6 +44,8 @@ ax2.set_xlabel('a parameter')
 ax2.set_ylabel('b parameter')
 ax2.set_zlabel('f(a, b)')
 
-ax2.scatter(2, -1, penalty(2,-1),marker = '*')
+# Find the minimum value
+min_x, min_y = np.where(func_value == np.amin(func_value))
+ax2.scatter(a_arr[min_x, min_y], b_arr[min_x, min_y], func_value[min_x, min_y],marker = '*')
 
 plt.show()
