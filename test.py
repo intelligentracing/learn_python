@@ -1,19 +1,19 @@
-print(2+2) # 整数加
+print(3+2) # integer add
 
-print(2+2.0) # 浮点数加
+print(3+2.0) # float add
 
-print(17/3) # 浮点数除法
+print(17/3) # float division
 
-print(round(17/3))  # 四舍五入
+print(round(17/3))  # round the fload to int
 
-print(17//3) # 整数除法，丢弃余数
+print(17//3) # integer division
 
-print(17%3) # 17 除3 的余数
+print(17%3) # 17 modulo 3
 
-print(5**2) # 5 的2次方
+print(5**2) # 5 to the power of 2
 
-a = True > False # Boolean 类型
+a = True > False # boolean type
 
 print(type(a))
 
-print("Hello World!")  #打印字符串
+print("Hello World!")  # print a string
