@@ -4,7 +4,6 @@
 ##
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
 
-
 # import two Python modules
 import math     # includes additional math functions
 from random import randint  # includes functions for generating random numbers
