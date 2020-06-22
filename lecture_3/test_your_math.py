@@ -6,8 +6,8 @@
 
 
 # import two Python modules
-import random   # includes functions for generating random numbers
 import math     # includes additional math functions
+from random import randint  # includes functions for generating random numbers
 
 # Define constants
 OPERATOR_ROUND = 1
@@ -15,9 +15,9 @@ OPERATOR_INT = 2
 OPERATOR_FLOOR = 3
 OPERATOR_CEIL = 4
 
-random_operator = random.randint(1,4)   # Select an operator randomly
-random_A = random.randint(-10,10)       # Select first value randomly
-random_B = random.randint(-10,10)       # Select second value randomly
+random_operator = randint(1,4)   # Select an operator, equiv to random.randint
+random_A = randint(-10,10)       # Select first value 
+random_B = randint(-10,10)       # Select second value
 if random_operator == OPERATOR_ROUND:   # If selected operator is round()
     result = round(random_A/random_B)
     operator_string = "round"
