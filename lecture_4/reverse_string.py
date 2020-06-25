@@ -17,7 +17,7 @@ while index>0:
 print(reversed_string)
 
 # Method 2, using slicing
-reversed_string = input_string[len(input_string)-1:0:-1] # will miss the first P
+reversed_string = input_string[len(input_string)-1::-1]
 print(reversed_string)
 
 sliced_string = input_string[::-1]
