@@ -8,7 +8,7 @@
 
 import time
 
-EXAMPLE_TO_RUN = 8
+EXAMPLE_TO_RUN = 6
 
 if EXAMPLE_TO_RUN == 0:
     # ********  Case 1: Using rserved words  ********
@@ -23,7 +23,7 @@ elif EXAMPLE_TO_RUN == 1:
 
 elif EXAMPLE_TO_RUN == 2:
     # ********  Case 7:  Access a list element that doesn't exist ********
-    animal_list = ['dog', 'cat', 'pony', 'fisn', 'leopard', 'rabbit','mouse']
+    animal_list = ['dog', 'cat', 'pony', 'fish', 'leopard', 'rabbit','mouse']
     try:
         print(animal_list[7])
     except IndexError:

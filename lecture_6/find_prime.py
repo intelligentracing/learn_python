@@ -6,9 +6,9 @@
 import math
 import sys
 
-int_limit = input("Please provide an integer limit for finding prime numbers: ")
+string_input = input("Please provide an integer limit for finding prime numbers: ")
 try:  # Try to catch posible error when int_limit is not an integer
-    int_limit = int(int_limit)
+    int_limit = int(string_input)
 except: # When runtime error occurs, except will be executed
     print("Not a valid integer input. Exit!")
 else: # else means no runtime error
