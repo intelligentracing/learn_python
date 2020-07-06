@@ -12,11 +12,10 @@ def insert_sort(input_list):
     Parameters:
     Input:  input_list  - Expecting a list of numerical numbers
 
-    Output: status      - Boolean: True or False
-            input_list  - sorted list if status is True
+    Output: input_list  - sorted list
     '''
     if type(input_list)!=list:
-        return False
+        input_list = list(input_list)
 
     for index in range(1, len(input_list)):
     
@@ -34,7 +33,7 @@ def insert_sort(input_list):
             input_list[index-1] = current
             index -=1
     
-    return True
+    return input_list
 
 # Generate a sufficiently long list for sorting
 sample_count = 10000
