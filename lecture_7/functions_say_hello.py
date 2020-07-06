@@ -5,13 +5,18 @@
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
 
 def print_hello_world():
-    ''' The function prints Hello World! string
-    '''
+    ''' The function prints Hello World! string. '''
+
     print('Hello World!') 
 
 def print_string(argin):
-    ''' The function converts argin to string and print
-    '''
+    """
+    The function converts argin to string and print. 
+    Input:
+        argin: argin will be converted to string
+    Output: None
+    """
+
     try:
         string = str(argin)
     except:
@@ -20,6 +25,6 @@ def print_string(argin):
         print(string) 
 
 def hello_world():
-    ''' The function returns Hellow World! string
-    '''
+    """The function returns Hellow World! string. """
+
     return('Hello World!')
