@@ -46,6 +46,7 @@ def DFS(board_size, start, goal, legit_moves):
         current_move = search_stack.pop()
 
         # Generate all legit moves
+        dead_end = True
         for i in legit_moves:
             
             # Generate a potential move
@@ -59,6 +60,7 @@ def DFS(board_size, start, goal, legit_moves):
                 continue
 
             # This is a valid position
+            dead_end = False
             search_stack.append(move_position)
             parent_map[move_position[0]][move_position[1]] = current_move
 
@@ -66,6 +68,11 @@ def DFS(board_size, start, goal, legit_moves):
             if move_position == goal:
                 is_goal = True
                 break
+        
+        if is_goal:
+            break
+        elif dead_end:
+            parent_map[current_move[0]][current_move[0]] = [None, None]
         
     path_queue = deque()
     if is_goal:
