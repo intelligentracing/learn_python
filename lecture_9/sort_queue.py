@@ -6,18 +6,17 @@
 
 from collections import deque
 
-def sort_deque(input_deque, reverse = False):
+def sort_deque(input_deque):
     ''' a sorting algorithm for deque treated as an FIFO queue
-    Solution uses recursing merging 1 and (n-1) queues
+    Solution uses recursing merging 1 and (n-1) queues in default ascending order
 
     parameters:
     Input:  input_deque - a deque type 
-            reverse     - bool type, ascending by default False, descending by True
     
     Output: input_queue - return sorted values
     '''
 
-    if type(input_deque)!=deque or type(reverse)!=bool:
+    if type(input_deque)!=deque:
         raise TypeError('Input arguments are not allowed.')
 
     if len(input_deque)==1:
