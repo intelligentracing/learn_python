@@ -9,10 +9,8 @@ from collections import deque
 def sort_deque(input_deque):
     ''' a sorting algorithm for deque treated as an FIFO queue
     Solution uses recursing merging 1 and (n-1) queues in default ascending order
-
-    parameters:
+    Parameters:
     Input:  input_deque - a deque type 
-    
     Output: input_queue - return sorted values
     '''
 
@@ -32,15 +30,15 @@ def sort_deque(input_deque):
         if first <  k_element:
             new_deque.append(first)
             new_deque.append(k_element)
+            first = None
             break
         else:
             new_deque.append(k_element)
-    else:
-        new_deque.append(first)     # if while never breaks, first should be the last
-
-    while len(sorted_deque)>0:      # After break, if any elements left in sorted_deque
-        k_element = sorted_deque.popleft()
-        new_deque.append(k_element)
+    
+    if not first is None:
+        new_deque.append(first)     # first is not None, manually add it to the end
+    elif len(sorted_deque)>0:    # sorted_deque is not empty, manually add it to the end
+        new_deque.extend(sorted_deque) 
         
     return new_deque
 
