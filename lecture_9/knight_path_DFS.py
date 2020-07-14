@@ -69,9 +69,7 @@ def DFS(board_size, start, goal, legit_moves):
                 is_goal = True
                 break
         
-        if is_goal:
-            break
-        elif dead_end:
+        if dead_end:
             parent_map[current_move[0]][current_move[0]] = [None, None]
         
     path_queue = deque()
