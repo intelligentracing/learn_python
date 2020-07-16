@@ -5,7 +5,7 @@
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
 from queue import PriorityQueue
 
-directed_graph=[(12, [0, 1]), (5, [0,3]), (8, [0, 2]), (15, [1,5]), 
+directed_graph=[(12, [0, 1]), (5, [0,3]), (3, [0, 2]), (15, [1,5]), 
     (16, [2, 4]), (2, [4,5]), (25, [3,5])]
 
 source_node = 0
