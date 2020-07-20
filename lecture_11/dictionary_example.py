@@ -18,7 +18,8 @@ print('three' in English_to_Chinese)
 # Build a character histogram
 
 histogram = dict()
-text = 'We can know only that we know nothing. And that is the highest degree of human wisdom.' # From War and Peace
+text = 'We can know only that we know nothing. \
+    And that is the highest degree of human wisdom.' # From War and Peace
 
 for c in text:
     if c.isalpha():
@@ -29,4 +30,7 @@ for c in text:
             histogram[c] = 1
 
 for key in histogram:
-    print(key, histogram[key])
+    print(key, end = ' ')
+print()
+for key in histogram:
+    print(histogram[key], end = ' ')

@@ -22,7 +22,7 @@ try:
 
     # Open the file for read
     f_handle = open(path+'/'+file_name,"r")
-
+    f_handle.readline()   # The first line is table captions
     # Create three dictionaries of different lengths
     count = 0
     for line in f_handle:

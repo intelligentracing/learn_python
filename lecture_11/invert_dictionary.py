@@ -4,6 +4,18 @@
 ##
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
 
+# Build a histogram dictionary
+histogram = dict()
+text = 'We can know only that we know nothing. And that is the highest degree of human wisdom.' # From War and Peace
+
+for c in text:
+    if c.isalpha():
+        c = c.lower()
+        if c in histogram:
+            histogram[c] += 1
+        else:
+            histogram[c] = 1
+
 def invert_dictionary(input_dictionary):
     '''
     Invert the mapping between keys and values of a dictionary
@@ -25,18 +37,13 @@ def invert_dictionary(input_dictionary):
     
     return result
 
-# Build a histogram dictionary
-histogram = dict()
-text = 'We can know only that we know nothing. And that is the highest degree of human wisdom.' # From War and Peace
-
-for c in text:
-    if c.isalpha():
-        c = c.lower()
-        if c in histogram:
-            histogram[c] += 1
-        else:
-            histogram[c] = 1
-
+# print out the histogram
+for key in histogram:
+    print(key, end = ' ')
+print()
+for key in histogram:
+    print(histogram[key], end = ' ')
+print()
 # Call invert_dictionary 
 inverse = invert_dictionary(histogram)
 print(inverse)
