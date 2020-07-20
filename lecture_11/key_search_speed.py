@@ -60,18 +60,21 @@ begin_time = time.time()
 for index in range(trial_total):
     query_result = search_list[index] in Dictionary10
 elapsed_time = time.time() - begin_time
-print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(Dictionary10), elapsed_time))
+print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(Dictionary10),
+    elapsed_time))
 
 # Test speed for query Dictionary10
 begin_time = time.time()
 for index in range(trial_total):
     query_result = search_list[index] in Dictionary1000
 elapsed_time = time.time() - begin_time
-print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(Dictionary1000), elapsed_time))
+print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(Dictionary1000),
+    elapsed_time))
 
 # Test speed for query Dictionary10
 begin_time = time.time()
 for index in range(trial_total):
     query_result = search_list[index] in DictionaryTotal
 elapsed_time = time.time() - begin_time
-print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(DictionaryTotal), elapsed_time))
+print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(DictionaryTotal),
+    elapsed_time))
