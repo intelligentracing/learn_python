@@ -1,5 +1,5 @@
 ## This is course material for Introduction to Python Scientific Programming
-## Class 12 Example code: key_search_speed.py
+## Class 12 Example code: set_search_speed.py
 ## Author: Allen Y. Yang,  Intelligent Racing Inc.
 ##
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
@@ -23,7 +23,7 @@ try:
     # Open the file for read
     f_handle = open(path+'/'+file_name,"r")
 
-    # Create three dictionaries of different lengths
+    # Create three sets of different lengths
     count = 0
     for line in f_handle:
         count += 1
@@ -42,7 +42,7 @@ finally:
 
 print('done')
             
-# Create 1M queries to time the performance of three dictionaries
+# Create 1M queries to time the performance of three sets
 print('Generating 1M random tickers ... ', end = ' ')
 trial_total = 1000000
 TICKER_LETTER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -55,21 +55,21 @@ for index in range(trial_total):
     search_list.append(new_random_ticker)
 print('done')
 
-# Test speed for query Dictionary10
+# Test speed for query Set10
 begin_time = time.time()
 for index in range(trial_total):
     query_result = search_list[index] in Set10
 elapsed_time = time.time() - begin_time
 print("Searching a size-{0} set 1M times takes: {1}s".format(len(Set10), elapsed_time))
 
-# Test speed for query Dictionary10
+# Test speed for query Set10
 begin_time = time.time()
 for index in range(trial_total):
     query_result = search_list[index] in Set1000
 elapsed_time = time.time() - begin_time
 print("Searching a size-{0} set 1M times takes: {1}s".format(len(Set1000), elapsed_time))
 
-# Test speed for query Dictionary10
+# Test speed for query Set10
 begin_time = time.time()
 for index in range(trial_total):
     query_result = search_list[index] in SetTotal
