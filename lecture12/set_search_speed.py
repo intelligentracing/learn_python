@@ -22,6 +22,7 @@ try:
 
     # Open the file for read
     f_handle = open(path+'/'+file_name,"r")
+    f_handle.readline()
 
     # Create three sets of different lengths
     count = 0
