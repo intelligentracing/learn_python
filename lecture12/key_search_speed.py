@@ -8,9 +8,9 @@ import os
 import random
 import time
 
-Dictionary10 = dict()
-Dictionary1000 = dict()
-DictionaryTotal = dict()
+Set10 = set()
+Set1000 = set()
+SetTotal = set()
 file_name = "nasdaqlisted.txt"
 
 # Put IO functions in try -- finally 
@@ -29,10 +29,10 @@ try:
         count += 1
         ticker, info = line.split('|',1)
         if count<=10:
-            Dictionary10[ticker] = info
+            Set10.add(ticker)
         if count<=1000:
-            Dictionary1000[ticker] = info
-        DictionaryTotal[ticker] = info
+            Set1000.add(ticker)
+        SetTotal.add(ticker)
 
 except IOError:
     print('Cannot open the file ' + file_name)
@@ -58,20 +58,20 @@ print('done')
 # Test speed for query Dictionary10
 begin_time = time.time()
 for index in range(trial_total):
-    query_result = search_list[index] in Dictionary10
+    query_result = search_list[index] in Set10
 elapsed_time = time.time() - begin_time
-print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(Dictionary10), elapsed_time))
+print("Searching a size-{0} set 1M times takes: {1}s".format(len(Set10), elapsed_time))
 
 # Test speed for query Dictionary10
 begin_time = time.time()
 for index in range(trial_total):
-    query_result = search_list[index] in Dictionary1000
+    query_result = search_list[index] in Set1000
 elapsed_time = time.time() - begin_time
-print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(Dictionary1000), elapsed_time))
+print("Searching a size-{0} set 1M times takes: {1}s".format(len(Set1000), elapsed_time))
 
 # Test speed for query Dictionary10
 begin_time = time.time()
 for index in range(trial_total):
-    query_result = search_list[index] in DictionaryTotal
+    query_result = search_list[index] in SetTotal
 elapsed_time = time.time() - begin_time
-print("Searching a size-{0} dictionary 1M times takes: {1}s".format(len(DictionaryTotal), elapsed_time))
+print("Searching a size-{0} set 1M times takes: {1}s".format(len(SetTotal), elapsed_time))
