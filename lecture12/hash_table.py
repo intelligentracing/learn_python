@@ -4,30 +4,24 @@
 ##
 ## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
 
-def division_hashing(text):
-    global hash_prime_number
-    hash_prime_number = 101
-
-    sum = 0
-    for c in text:
-        sum = sum*256 + ord(c)  # Change a character to its ASCII value
-    
-    return sum % hash_prime_number
-
 def hash_table_insert(table, entry):
 
     if type(table)!=dict:
         raise TypeError('Argument 1 must be a dict type')
 
-    entry_hash = division_hashing(entry)
+    entry_hash = entry.__hash__()
     if entry_hash in table:
-        table[entry_hash].append(entry)
+        for stored in table[entry_hash]:
+            if entry == stored: 
+                break
+        else:
+            table[entry_hash].append(entry)
     else: 
         table[entry_hash] = [entry]
 
-quotes = ['We can know only that we know nothing. And that is the highest degree of human wisdom.',\
-        'Nothing is so necessary for a young man as the company of intelligent women.',\
-        'The strongest of all warriors are these two — Time and Patience.',\
+quotes = ['We can know only that we know nothing. And that is the highest degree of human wisdom.',
+        'Nothing is so necessary for a young man as the company of intelligent women.',
+        'The strongest of all warriors are these two — Time and Patience.',
         'There is no greatness where there is not simplicity, goodness, and truth.'
         ]
 string = quotes[0]
