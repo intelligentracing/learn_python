@@ -20,4 +20,7 @@ def division_hashing(text):
     
     return sum % hash_prime_number
 
-print(division_hashing(quotes[0]), division_hashing(quotes[1]), division_hashing(quotes[2]), division_hashing(quotes[3]))
+print(division_hashing(quotes[0]), division_hashing(quotes[1]), division_hashing(quotes[2]), 
+    division_hashing(quotes[3]))
+print(division_hashing(quotes[0][1:]), division_hashing(quotes[1][1:]), division_hashing(quotes[2][1:]), 
+    division_hashing(quotes[3][1:]))
