@@ -26,20 +26,19 @@ class Person:
     def print_name(selfish):
         print('First Name: {0}, Last Name: {1}'.format(selfish.first_name, selfish.last_name))
 
-    @classmethod
-    def set_retirement_age(careful, retirement_age):
-        if retirement_age<0:
-            raise ValueError('age attribute in Person must be nonnegative.')
-
-        careful.retirement_age = retirement_age
-
-    @classmethod    
-    def years_until_retirement(cls, age):
-        until_retirement_year = cls.retirement_age - age
+    def years_until_retirement(self):
+        until_retirement_year = Person.retirement_age - self.age
         if until_retirement_year<=0:
             print('This person has retired')
         else:
             print('This person has {0} years until retirement'.format(until_retirement_year))
+
+    @classmethod
+    def set_retirement_age(cls, retirement_age):
+        if retirement_age<0:
+            raise ValueError('age attribute in Person must be nonnegative.')
+
+        cls.retirement_age = retirement_age
 
     @staticmethod
     def copyright():

@@ -13,7 +13,8 @@ x2 = Person('Jane', 'Doe')
 x2.print_name()
 print(x2.first_name, 'Retirement Age: ', x1.retirement_age)
 
-Person.years_until_retirement(42)
+x1.set_age(42)
+x1.years_until_retirement()
 
 print(x1.first_name, 'Retirement Age:', x1.retirement_age)
 x1.retirement_age = 80
