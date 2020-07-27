@@ -7,12 +7,18 @@
 from person import Person
 
 x1 = Person('John', 'Smith')
-x2 = Person('Jane', 'Doe')
 x1.print_name()
-x2.print_name()
 
-print(x1.retirement_age)
+x2 = Person('Jane', 'Doe')
+x2.print_name()
+print(x2.first_name, 'Retirement Age: ', x1.retirement_age)
+
 Person.years_until_retirement(42)
-x1.set_age(80)
-x1.years_until_retirement(x1.age)
+
+print(x1.first_name, 'Retirement Age:', x1.retirement_age)
+x1.retirement_age = 80
+print(x1.first_name, 'Retirement Age:', x1.retirement_age)
+x1.set_retirement_age(80)
+print('Class Retirement Age:',Person.retirement_age)
+
 Person.copyright()
