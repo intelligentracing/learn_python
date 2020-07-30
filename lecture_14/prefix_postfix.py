@@ -18,4 +18,5 @@ class PrefixPostfix:
 test = PrefixPostfix()
 test.print_out()
 print(dir(test))
+print(test._internal)
 print(test._PrefixPostfix__double_underscore)
