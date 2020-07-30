@@ -10,7 +10,7 @@ class Shape:
 
     def get_area(self):
         ''' virtual method to calculate area of a shape'''
-        pass
+        raise NotImplementedError
 
     @classmethod
     def is_init(cls):
