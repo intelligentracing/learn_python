@@ -21,15 +21,17 @@ try:
     for line in source_handle:
         byte_array = line.encode('ascii') # Convert str to a byte array
         md5.update(byte_array)
+
+    # Write the binary digest values
+    hashtag_handle.write(md5.digest())
+
+    # Re-read from the beginning to verify
+    hashtag_handle.seek(0)
+    hashtag_bytes = hashtag_handle.read()
+    print(hashtag_bytes)
 except IOError:
     print('IO Error! Please check valid file names and paths')
     exit
 finally:
     source_handle.close()
-    hashtag_handle.write(md5.digest())
-
-    # Re-read from the beginning
-    hashtag_handle.seek(0)
-    hashtag_bytes = hashtag_handle.read()
-    print(hashtag_bytes)
     hashtag_handle.close()
