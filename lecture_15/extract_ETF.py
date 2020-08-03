@@ -17,7 +17,7 @@ try:
     result_handle = open(path+'/'+result_filename,'w')
 
     for line in source_handle:
-        if 'ETF' in line:           # if substring ETF exists in one line, we save it to the result file
+        if 'ETF' in line:           # if substring ETF exists in one line
             print(line)
             result_handle.write(line)
 except IOError:
