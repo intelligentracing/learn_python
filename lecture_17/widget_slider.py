@@ -45,6 +45,4 @@ def colorfunc(label):
 
 radio.on_clicked(colorfunc)
 
-#plt.show()
-fig.canvas.draw_idle()
-plt.pause(np.inf)
+plt.show()
