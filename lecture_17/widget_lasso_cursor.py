@@ -7,8 +7,8 @@
 import matplotlib.pyplot as plt
 from matplotlib.widgets import LassoSelector, Cursor
 
-fig = plt.figure()
-ax1 = fig.add_subplot(1, 2, 1)
+fig = plt.figure(0)
+ax1 = plt.gca()
 ax1.set_xlim([-10, 0])
 ax1.set_ylim([-10, 10])
 
@@ -18,7 +18,8 @@ def onSelect(x):
 lineprops = {'color': 'red', 'linewidth': 3, 'alpha': 0.5}
 lasso = LassoSelector(ax=ax1, onselect=onSelect, lineprops=lineprops)
 
-ax2 = fig.add_subplot(1,2,2)
+fig = plt.figure(1)
+ax2 = plt.gca()
 ax2.set_xlim([0, 10])
 ax2.set_ylim([-10, 10])
 
