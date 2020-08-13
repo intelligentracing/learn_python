@@ -7,10 +7,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Define the linear system
 x = np.arange(0,50,1)
 y1 = 35 - x
-y2 = 55 - 2*x
+y2 = (110 - 4*x)/2
 
+# Plot the equations and intersection
 line1, = plt.plot(x, y1, 'r', linewidth = 3)
 line1.set_label('Total pigs and chicken = 35')
 line2, = plt.plot(x, y2, 'b', linewidth = 3)
