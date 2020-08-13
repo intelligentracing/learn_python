@@ -11,5 +11,5 @@ b = np.array([35, 110])
 Ainv = np.linalg.inv(A)
 print('A inverse =', Ainv)
 
-x = Ainv.dot(b)
-print('Animal count vector = ', x)
+xx = Ainv.dot(b)
+print('Animal count vector = ', xx)
