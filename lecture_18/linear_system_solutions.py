@@ -16,8 +16,6 @@ fig, ax = plt.subplots()
 plt.subplots_adjust(bottom = 0.25)
 
 def draw_systems():
-    global legend_handle
-
     ax.clear()
     y1 = (bb[0,0] - A[0,0]*x)/A[0,1]
     y2 = (bb[1,0] - A[1,0]*x)/A[1,1]
@@ -34,7 +32,7 @@ def draw_systems():
         intersection, = ax.plot(xx[0,0], xx[1,0], 'kD', markersize = 8)
         intersection.set_label('('+str(xx[0,0])+', ' + str(xx[1,0])+')')
 
-    legend_handle=ax.legend()
+    ax.legend()
     fig.canvas.draw_idle()
 
 # Create initial plot
