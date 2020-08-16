@@ -7,9 +7,9 @@
 import numpy as np
 
 A = np.array([[1,1],[4,2]])
-b = np.array([35, 110])
+b = np.array([[35], [110]])
 Ainv = np.linalg.inv(A)
 print('A inverse =\n', Ainv)
 
 xx = Ainv.dot(b)
-print('Animal count vector = ', xx)
+print('Animal count vector = \n', xx)
