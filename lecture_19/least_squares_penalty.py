@@ -28,17 +28,15 @@ ax1.scatter(x_sample, y_sample, c = x_sample, cmap = 'hsv')
 ax2 = fig.add_subplot(1,2,2, projection = '3d')
 
 def penalty(para_a, para_b):
-    global x_sample, y_sample, sample_count
-
     squares = (y_sample - para_a*x_sample - para_b)**2
     return 1/2/sample_count*np.sum(squares)
 
 a_arr, b_arr = np.meshgrid(np.arange(-5, 5, 0.1), np.arange(-5, 5, 0.1) )
 
 func_value = np.zeros(a_arr.shape)
-for x in range(a_arr.shape[0]):
-    for y in range(a_arr.shape[1]):
-            func_value[x, y] = penalty(a_arr[x, y], b_arr[x, y])
+for ax in range(a_arr.shape[0]):
+    for ay in range(a_arr.shape[1]):
+            func_value[ax, ay] = penalty(a_arr[ax, ay], b_arr[ax, ay])
 
 ax2.plot_surface(a_arr, b_arr, func_value, color = 'red', alpha = 0.8)
 ax2.set_xlabel('a parameter')
