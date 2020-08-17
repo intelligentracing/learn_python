@@ -49,7 +49,7 @@ def grad(aa):
 aa = np.array([-4, 4])
 value = penalty(aa[0],aa[1])
 ax2.scatter(aa[0], aa[1], penalty(aa[0],aa[1]), c='b', s=100, marker='*')
-epsilon = 0.001
+epsilon = 0.00001
 learn_rates = [0.2, 0.1, 0.05, 0.01]
 max_iteration = 100
 delta = value
@@ -67,8 +67,8 @@ while delta > epsilon and iter < max_iteration:
 
     ax2.plot([aa[0],aa_next[0]],[aa[1], aa_next[1]],\
         [penalty(aa[0],aa[1]), penalty(aa_next[0],aa_next[1]) ], 'ko-')
-    delta = np.linalg.norm(aa - aa_next)
     aa = aa_next
+    value = value - delta
     iter +=1
     fig.canvas.draw_idle()
     plt.pause(0.1)
