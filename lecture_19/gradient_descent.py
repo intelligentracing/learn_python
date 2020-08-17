@@ -38,9 +38,9 @@ ax2.set_zlabel('f(a, b)')
 # Plot the gradient descent
 def grad(aa):
     grad_aa = np.zeros(2)
-    update_vector = 1/sample_count * (y_sample - aa[0] * x_sample - aa[1])
-    grad_aa[0] = - x_sample.dot(update_vector)
-    grad_aa[1] = - np.ones(sample_count).dot(update_vector)
+    update_vector = (y_sample - aa[0] * x_sample - aa[1])
+    grad_aa[0] = - 1/sample_count * x_sample.dot(update_vector)
+    grad_aa[1] = - 1/sample_count * np.sum(update_vector)
     return grad_aa
 
 aa = np.array([-4, 4])

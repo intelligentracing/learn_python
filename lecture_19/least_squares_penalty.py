@@ -45,6 +45,7 @@ ax2.set_zlabel('f(a, b)')
 
 # Find the minimum value
 optimal_x, optimal_y = np.where(func_value == np.amin(func_value))
+print(a_arr[optimal_x, optimal_y], b_arr[optimal_x, optimal_y])
 ax2.scatter(a_arr[optimal_x, optimal_y], b_arr[optimal_x, optimal_y], \
     func_value[optimal_x, optimal_y],marker = '*')
 plt.show()
